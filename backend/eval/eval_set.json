@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is causing the SSO login issues customers have reported?",
+    "expected_source_ids": ["tkt-001", "tkt-002", "tkt-005", "issue-001", "issue-002", "prd-001"]
+  },
+  {
+    "question": "Has the SSO issue been fixed?",
+    "expected_source_ids": ["issue-002", "meet-002"]
+  },
+  {
+    "question": "What feature have customers repeatedly requested around exporting data?",
+    "expected_source_ids": ["tkt-004", "tkt-006", "prd-002", "meet-001", "meet-002"]
+  },
+  {
+    "question": "Which product area is generating the most support burden?",
+    "expected_source_ids": ["tkt-001", "tkt-002", "tkt-005", "meet-001"]
+  },
+  {
+    "question": "What did the customer interview reveal about renewal risk?",
+    "expected_source_ids": ["interview-001"]
+  }
+]

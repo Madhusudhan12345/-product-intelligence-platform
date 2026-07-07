@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+venv/
+.env
+node_modules/
+dist/
+app/data/*.db
+app/data/*.index
+app/data/*.json
+!data/sample_sources.json
+eval/eval_results.json

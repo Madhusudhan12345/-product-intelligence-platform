@@ -1,0 +1,100 @@
+[
+  {
+    "question": "What is causing the SSO login issues customers have reported?",
+    "recall": 0.83,
+    "precision": 0.83,
+    "latency_ms": 2042.7,
+    "retrieved_source_ids": [
+      "issue-001",
+      "meet-001",
+      "prd-001",
+      "tkt-001",
+      "tkt-002",
+      "tkt-005"
+    ],
+    "expected_source_ids": [
+      "issue-001",
+      "issue-002",
+      "prd-001",
+      "tkt-001",
+      "tkt-002",
+      "tkt-005"
+    ]
+  },
+  {
+    "question": "Has the SSO issue been fixed?",
+    "recall": 0.5,
+    "precision": 0.17,
+    "latency_ms": 2578.1,
+    "retrieved_source_ids": [
+      "issue-001",
+      "meet-001",
+      "meet-002",
+      "tkt-001",
+      "tkt-002",
+      "tkt-005"
+    ],
+    "expected_source_ids": [
+      "issue-002",
+      "meet-002"
+    ]
+  },
+  {
+    "question": "What feature have customers repeatedly requested around exporting data?",
+    "recall": 1.0,
+    "precision": 0.83,
+    "latency_ms": 1721.7,
+    "retrieved_source_ids": [
+      "interview-001",
+      "meet-001",
+      "meet-002",
+      "prd-002",
+      "tkt-004",
+      "tkt-006"
+    ],
+    "expected_source_ids": [
+      "meet-001",
+      "meet-002",
+      "prd-002",
+      "tkt-004",
+      "tkt-006"
+    ]
+  },
+  {
+    "question": "Which product area is generating the most support burden?",
+    "recall": 0.25,
+    "precision": 0.17,
+    "latency_ms": 2280.1,
+    "retrieved_source_ids": [
+      "interview-001",
+      "issue-003",
+      "meet-001",
+      "prd-001",
+      "tkt-003",
+      "tkt-004"
+    ],
+    "expected_source_ids": [
+      "meet-001",
+      "tkt-001",
+      "tkt-002",
+      "tkt-005"
+    ]
+  },
+  {
+    "question": "What did the customer interview reveal about renewal risk?",
+    "recall": 1.0,
+    "precision": 0.17,
+    "latency_ms": 2951.2,
+    "retrieved_source_ids": [
+      "interview-001",
+      "issue-002",
+      "meet-001",
+      "prd-001",
+      "tkt-001",
+      "tkt-002"
+    ],
+    "expected_source_ids": [
+      "interview-001"
+    ]
+  }
+]
