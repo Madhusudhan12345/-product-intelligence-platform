@@ -65,7 +65,6 @@ class MemoryStore:
             self.conn.commit()
 
     def get_relevant_insights(self, keywords: List[str], limit: int = 5) -> List[str]:
-        """Naive keyword match over stored insights. Swap for embedding search if needed."""
         if not keywords:
             return []
         with self._lock:
@@ -80,6 +79,13 @@ class MemoryStore:
                 "SELECT question, answer, created_at FROM query_log ORDER BY created_at DESC LIMIT ?", (limit,)
             )
             return [{"question": q, "answer": a, "created_at": t} for q, a, t in cur.fetchall()]
+
+    def reset(self):
+        """Wipe query_log and insights tables (used by the admin reset endpoint)."""
+        with self._lock:
+            self.conn.execute("DELETE FROM query_log")
+            self.conn.execute("DELETE FROM insights")
+            self.conn.commit()
 
 
 memory_store = MemoryStore()

@@ -66,7 +66,6 @@ class VectorStore:
 
         with self._lock:
             q_vec = self._embed([query])
-            # over-fetch then filter, since FAISS flat index has no native metadata filter
             fetch_k = min(self.index.ntotal, max(top_k * 5, 20))
             scores, idxs = self.index.search(q_vec, fetch_k)
 
@@ -92,6 +91,12 @@ class VectorStore:
             by_type[m["source_type"]] = by_type.get(m["source_type"], 0) + 1
         return {"total_chunks": len(self.meta), "by_source_type": by_type}
 
+    def reset(self):
+        """Wipe the index and metadata (used by the admin reset endpoint)."""
+        with self._lock:
+            self.index = faiss.IndexFlatIP(self.dim)
+            self.meta = []
+            self._persist()
 
-# module-level singleton so FastAPI routers share one in-memory index
+
 vector_store = VectorStore()
